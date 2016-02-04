@@ -1,7 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
-var del = require('delete')
+var del = require('delete');
+var imagemin = require('gulp-imagemin');
 
 gulp.task('sass', function () {
     gulp.src('./src/FrontBundle/Resources/Public/sass/master.scss')
@@ -38,6 +39,12 @@ gulp.task('clean_js', function() {
     });
 });
 
+gulp.task('img', function() {
+    return gulp.src('./src/FrontBundle/Resources/Public/images/*')
+        .pipe(imagemin({ progressive: true }))
+        .pipe(gulp.dest('./web/img'));
+});
+
 gulp.task('watch', function () {
     var onChange = function (event) {
         console.log('File '+event.path+' has been '+event.type);
@@ -47,5 +54,7 @@ gulp.task('watch', function () {
     gulp.watch('./src/FrontBundle/Resources/Public/js/**/*.js', ['clean_js', 'js'])
         .on('change', onChange);
 });
+
+
 
 gulp.task('default', function () {});
