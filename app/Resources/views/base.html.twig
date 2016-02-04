@@ -18,14 +18,14 @@
             <div class="row">
                 <nav class="nav navbar-collapse">
                     <ul class="nav navbar-nav">
-                        <li><div class="logo"></div></li>
+                        <li><img src="{{ asset('/img/logo') }}" alt=""></li>
                         {% for name in navigation %}
                             <li><a href="">{{ name }}</a></li>
                         {% endfor %}
                         <li>
-                            <div class="donate">
+                            <button class="donate">
                                 Faire un don
-                            </div>
+                            </button>
                         </li>
                     </ul>
                 </nav>
