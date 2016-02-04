@@ -8,6 +8,18 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('FrontBundle:Default:index.html.twig');
+        $navigation = array(
+            "Accueil",
+            "Présentation",
+            "Pauline & Margaux",
+            "Préparation",
+            "Témoignages"
+        );
+        return $this->render(
+            'FrontBundle:Default:index.html.twig',
+            array(
+                "navigation" => $navigation
+            )
+        );
     }
 }
