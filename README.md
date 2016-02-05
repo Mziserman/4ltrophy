@@ -4,7 +4,7 @@
 ## Installation
  
 * On clone le repository
-* `composer install` pour installer les vendors
+* `composer install` et `npm install` pour installer les vendors
 * `php app/console doctrine:database:create` pour créer la base de donnée
 * `php app/console doctrine:migration:migrate` pour créer le modèle de données à partir des migrations
 * Le site est accessible à partir de `web/app.php` pour la version de production, ou `web/app_dev.php` pour la version de développement
