@@ -18,7 +18,7 @@ class DefaultController extends Controller
         return $this->render(
             'FrontBundle:Default:index.html.twig',
             array(
-                "navigation" => $navigation
+                "navigation" => $navigation,
             )
         );
     }
