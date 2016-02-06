@@ -1,13 +1,43 @@
+{# app/Resources/views/base.html.twig #}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+<head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}Welcome!{% endblock %}</title>
+    {% block stylesheets %}
+        <link href="{{ asset('/css/master.css') }}" rel="stylesheet">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css'>
+        <!-- Latest compiled and minified CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+{% block body %}
+    <div class="container-fluid">
+        {% block menu %}
+            <div class="row">
+                <nav class="nav_wrapper col-sm-12">
+                    <ul class="nav_list center-block">
+                        <li><img src="{{ asset('/img/logo.png') }}" alt=""></li>
+                        {% for name in navigation %}
+                            <li {% if name == "Accueil" %}class="active"{% endif %}><a href="">{{ name }}</a></li>
+                        {% endfor %}
+                        <li>
+                            <button class="donate">
+                                Faire un don
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        {% endblock %}
+        {% block content %}{% endblock %}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    <script src="{{ asset('/js/scripts.js') }}"></script>
+{% endblock %}
+</body>
 </html>
