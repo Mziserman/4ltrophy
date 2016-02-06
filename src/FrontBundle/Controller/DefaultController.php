@@ -22,4 +22,15 @@ class DefaultController extends Controller
             )
         );
     }
+
+    public function testApiAction()
+    {
+        $facebookCatcher = $this->container->get('utils.facebook.feed_catcher');
+
+        $graphEdge = $facebookCatcher->getFeed();
+
+        return $this->render('FrontBundle:Default:test.html.twig', [
+            'graphEdge' => $graphEdge,
+        ]);
+    }
 }

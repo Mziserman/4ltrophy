@@ -1,4 +1,8 @@
 services:
-#    front.example:
-#        class: FrontBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    utils.facebook.feed_catcher:
+        class: FrontBundle\Utils\Facebook\FacebookFeedCatcher
+        arguments: ["@utils.facebook_app", %facebook-page-id%]
+
+    utils.facebook_app:
+        class: Facebook\FacebookApp
+        arguments: [%facebook-app-id%, %facebook-app-secret%]

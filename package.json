@@ -1,0 +1,25 @@
+{
+  "name": "ao2-4l",
+  "version": "1.0.0",
+  "description": "4L Trophy, Team 1, AO =====================",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sass": "^2.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mziserman/4ltrophy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mziserman/4ltrophy/issues"
+  },
+  "homepage": "https://github.com/Mziserman/4ltrophy#readme"
+}
