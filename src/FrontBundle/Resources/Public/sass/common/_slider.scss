@@ -1,7 +1,15 @@
-.carousel-page
-{
-  width:100%;
-  height:400px;
-  background-color:#5f666d;
-  color:white;
+
+.item {
+  .carousel-page {
+    width: 100%;
+    height: 400px;
+    background-color: #5f666d;
+    color: white;
+    img {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
 }

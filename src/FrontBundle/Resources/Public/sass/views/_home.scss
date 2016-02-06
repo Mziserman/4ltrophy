@@ -8,6 +8,10 @@
     margin-bottom: 40px;
     font-family: 'Open Sans', sans-serif;
   }
+  p {
+    margin-bottom: 50px;
+    font-family: 'Roboto Slab', serif;
+  }
   span {
     padding:15px 30px 15px 30px;
     background-color: #d13d3d;
@@ -17,13 +21,8 @@
       text-decoration: none;
     }
   }
-
-  p {
-    margin-bottom: 50px;
-    font-family: 'Roboto Slab', serif;
-  }
   .carrousel {
-    border:1px solid black;
+    padding: 0;
   }
   .brand  {
     padding-bottom: 50px;
