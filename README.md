@@ -9,6 +9,9 @@
 * `php app/console doctrine:migration:migrate` pour créer le modèle de données à partir des migrations
 * Le site est accessible à partir de `web/app.php` pour la version de production, ou `web/app_dev.php` pour la version de développement
 
+* Pour travailler : gulp watch
+* Pour installer : gulp sass, gulp img, gulp js
+
 ## Workflow
 **On ne push jamais sur master!!!**
 **On pull toujours avec l'option `--rebase`**
