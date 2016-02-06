@@ -17,9 +17,9 @@ gulp.task('js', function() {
     });
 
     gulp.src([
-            './src/FrontBundle/Resources/Public/js/**/*.js',
             './web/components/jquery/dist/jquery.min.js',
             './web/components/bootstrap-sass/assets/javascripts/bootstrap/*.js',
+            './src/FrontBundle/Resources/Public/js/**/*.js',
         ])
         .pipe(concat('scripts.js'))
         .pipe(gulp.dest('./web/js'));
