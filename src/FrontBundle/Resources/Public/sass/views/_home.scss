@@ -63,28 +63,41 @@
   }
   .testimony {
     padding-bottom: 50px;
-    h2, p, span {
-      text-align: center;
+    text-align: center;
+    .content {
+      padding:20px;
+      p, h3 {
+        color: #fff;
+      }
+      p {
+        font-family: 'Roboto Slab', serif;
+      }
     }
     img {
-      position: absolute;
+      z-index:1;
+      padding-left:0px;
+
     }
     .filter {
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
       position: absolute;
+      height: 100%;
+      background-color:rgba(0, 0, 0, 0.5);
+      z-index:2;
     }
     .container{
       .testimony-container {
         margin-bottom: 20px;
         .right {
           .crop-right  {
+            padding-left: 30px;
+            padding-right: 0;
             position: relative;
             height: 200px;
             overflow: hidden;
             margin-bottom: 30px;
-
+            img {
+              width: 100%;
+            }
           }
         }
         .left {
