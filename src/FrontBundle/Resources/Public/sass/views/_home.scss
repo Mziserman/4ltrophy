@@ -1,0 +1,111 @@
+
+
+.slider {
+  padding-bottom: 50px;
+  padding-top: 30px;
+  background-color: blue;
+}
+.brand  {
+  padding-bottom: 50px;
+  padding-top: 30px;
+  text-align: center;
+  h2 {
+    text-align: center;
+    position: relative;
+    margin-bottom: 40px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  p {
+    font-family: 'Roboto Slab', serif;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  span {
+    padding:15px 30px 15px 30px;
+    background-color: #d13d3d;
+  }
+}
+
+.adventure {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  background: #f6f6f6;
+  .photo {
+    position: relative;
+    overflow: hidden;
+    padding:10px;
+  }
+  .text {
+    padding:10px;
+    h2 {
+      position: relative;
+      margin-top: 0;
+      margin-bottom: 40px;
+    }
+    p {
+      font-family: 'Roboto Slab', serif;
+      margin-bottom: 50px;
+    }
+    span {
+      padding:15px 30px 15px 30px;
+      background-color: #d13d3d;
+    }
+  }
+}
+.testimony {
+  padding-bottom: 50px;
+  padding-top: 30px;
+  text-align: center;
+  .container{
+    h2 {
+      margin-bottom: 40px;
+    }
+    p {
+      font-family: 'Roboto Slab', serif;
+      margin-bottom: 50px;
+    }
+    .testimony-container {
+      margin-bottom: 50px;
+      .right {
+        .crop-right  {
+          position: relative;
+          height: 200px;
+          overflow: hidden;
+          margin-bottom: 30px;
+        }
+      }
+      .left {
+        .crop-left {
+          position: relative;
+          height: 430px;
+          overflow: hidden;
+          margin-bottom: 30px;
+          img {
+            height: 430px;
+          }
+        }
+      }
+    }
+    span {
+      padding:15px 30px 15px 30px;
+      background-color: #d13d3d;
+    }
+  }
+}
+.twitter {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  text-align: center;
+  background-color: #f6f6f6;
+}
+.stats {
+  padding-bottom: 30px;
+  padding-top: 30px;
+  text-align: center;
+  h2 {
+    font-family: 'Open Sans', sans-serif;
+  }
+  p {
+    font-family: 'Roboto Slab', serif;
+  }
+}
