@@ -1,111 +1,113 @@
-
-
-.slider {
-  padding-bottom: 50px;
-  padding-top: 30px;
-  background-color: blue;
-}
-.brand  {
-  padding-bottom: 50px;
-  padding-top: 30px;
-  text-align: center;
+.home {
+  .row {
+    padding-bottom: 30px;
+    padding-top: 30px;
+  }
   h2 {
-    text-align: center;
-    position: relative;
+    text-transform: uppercase;
     margin-bottom: 40px;
     font-family: 'Open Sans', sans-serif;
-  }
-  p {
-    font-family: 'Roboto Slab', serif;
-    text-align: center;
-    margin-bottom: 50px;
   }
   span {
     padding:15px 30px 15px 30px;
     background-color: #d13d3d;
+    text-transform: uppercase;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
-}
 
-.adventure {
-  padding-bottom: 30px;
-  padding-top: 30px;
-  background: #f6f6f6;
-  .photo {
-    position: relative;
-    overflow: hidden;
-    padding:10px;
+  p {
+    margin-bottom: 50px;
+    font-family: 'Roboto Slab', serif;
   }
-  .text {
-    padding:10px;
+  .slider {
+    background-color: blue;
+  }
+  .brand  {
+    padding-bottom: 50px;
+    text-align: center;
     h2 {
+      text-align: center;
+    }
+    p {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
+
+  .adventure {
+    background: #f6f6f6;
+    h2 {
+      text-align: center;
+    }
+    .photo {
       position: relative;
-      margin-top: 0;
-      margin-bottom: 40px;
+      overflow: hidden;
+      padding: 10px;
     }
-    p {
-      font-family: 'Roboto Slab', serif;
-      margin-bottom: 50px;
-    }
-    span {
-      padding:15px 30px 15px 30px;
-      background-color: #d13d3d;
+    .text {
+      padding:10px;
+      h3 {
+        margin-top: 0;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+      }
+      p {
+        margin-bottom: 50px;
+      }
     }
   }
-}
-.testimony {
-  padding-bottom: 50px;
-  padding-top: 30px;
-  text-align: center;
-  .container{
-    h2 {
-      margin-bottom: 40px;
+  .testimony {
+    padding-bottom: 50px;
+    h2, p, span {
+      text-align: center;
     }
-    p {
-      font-family: 'Roboto Slab', serif;
-      margin-bottom: 50px;
+    img {
+      position: absolute;
     }
-    .testimony-container {
-      margin-bottom: 50px;
-      .right {
-        .crop-right  {
-          position: relative;
-          height: 200px;
-          overflow: hidden;
-          margin-bottom: 30px;
+    .filter {
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      position: absolute;
+    }
+    .container{
+      .testimony-container {
+        margin-bottom: 20px;
+        .right {
+          .crop-right  {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            margin-bottom: 30px;
+
+          }
         }
-      }
-      .left {
-        .crop-left {
-          position: relative;
-          height: 430px;
-          overflow: hidden;
-          margin-bottom: 30px;
-          img {
+        .left {
+          .crop-left {
+            position: relative;
             height: 430px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            img {
+              height: 430px;
+            }
           }
         }
       }
-    }
-    span {
-      padding:15px 30px 15px 30px;
-      background-color: #d13d3d;
+
     }
   }
-}
-.twitter {
-  padding-bottom: 30px;
-  padding-top: 30px;
-  text-align: center;
-  background-color: #f6f6f6;
-}
-.stats {
-  padding-bottom: 30px;
-  padding-top: 30px;
-  text-align: center;
-  h2 {
-    font-family: 'Open Sans', sans-serif;
+  .twitter {
+    text-align: center;
+    background-color: #f6f6f6;
   }
-  p {
-    font-family: 'Roboto Slab', serif;
+  .stats {
+    text-align: center;
+
   }
 }
