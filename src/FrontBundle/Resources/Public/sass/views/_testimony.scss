@@ -1,5 +1,6 @@
 .testimonyRow {
   .testimony {
+    margin-bottom: 20px;
     p {
       text-align: center;
     }
@@ -7,6 +8,20 @@
       width: 100%;
       margin-bottom: 20px;
       margin-top: 20px;
+    }
+    .photoContainer {
+      border-radius: 50%;
+      overflow: hidden;
+      position: relative;
+      width: 100px;
+      height: 100px;
+      margin-bottom: 20px;
+      img {
+        display: inline;
+        margin:0 auto;
+        height: 100%;
+        width:auto;
+      }
     }
   }
 }
