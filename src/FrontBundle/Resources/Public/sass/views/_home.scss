@@ -1,111 +1,131 @@
-
-
-.slider {
-  padding-bottom: 50px;
-  padding-top: 30px;
-  background-color: blue;
-}
-.brand  {
-  padding-bottom: 50px;
-  padding-top: 30px;
-  text-align: center;
-  h2 {
-    text-align: center;
-    position: relative;
-    margin-bottom: 40px;
-    font-family: 'Open Sans', sans-serif;
-  }
-  p {
-    font-family: 'Roboto Slab', serif;
-    text-align: center;
-    margin-bottom: 50px;
+.home {
+  .row {
+    padding-bottom: 30px;
+    padding-top: 30px;
   }
   span {
     padding:15px 30px 15px 30px;
     background-color: #d13d3d;
+    text-transform: uppercase;
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
   }
-}
+  .carrousel {
+    padding: 0;
+  }
+  .brand  {
+    padding-bottom: 50px;
+    text-align: center;
+    h2 {
+      font-family: $font_title;
+      text-align: center;
+    }
+    p {
+      font-family: $font_body;
+      text-align: center;
+      margin-bottom: 50px;
+    }
+  }
 
-.adventure {
-  padding-bottom: 30px;
-  padding-top: 30px;
-  background: #f6f6f6;
-  .photo {
-    position: relative;
-    overflow: hidden;
-    padding:10px;
-  }
-  .text {
-    padding:10px;
+  .adventure {
+    background: #f6f6f6;
     h2 {
+      font-family: $font_title;
+      text-align: center;
+    }
+    p {
+      font-family: $font_body;
+    }
+    .photo {
       position: relative;
-      margin-top: 0;
-      margin-bottom: 40px;
+      overflow: hidden;
+      padding: 10px;
     }
-    p {
-      font-family: 'Roboto Slab', serif;
-      margin-bottom: 50px;
-    }
-    span {
-      padding:15px 30px 15px 30px;
-      background-color: #d13d3d;
+    .text {
+      padding:10px;
+      h3 {
+        margin-top: 0;
+        text-transform: uppercase;
+        margin-bottom: 40px;
+        font-family: 'Open Sans', sans-serif;
+        font-size: 20px;
+      }
+      p {
+        margin-bottom: 50px;
+      }
     }
   }
-}
-.testimony {
-  padding-bottom: 50px;
-  padding-top: 30px;
-  text-align: center;
-  .container{
-    h2 {
-      margin-bottom: 40px;
-    }
-    p {
-      font-family: 'Roboto Slab', serif;
-      margin-bottom: 50px;
-    }
-    .testimony-container {
-      margin-bottom: 50px;
-      .right {
-        .crop-right  {
-          position: relative;
-          height: 200px;
-          overflow: hidden;
-          margin-bottom: 30px;
-        }
+  .testimony {
+    padding-bottom: 50px;
+    text-align: center;
+    .content {
+      padding:20px;
+      p, h3 {
+        color: #fff;
       }
-      .left {
-        .crop-left {
-          position: relative;
-          height: 430px;
-          overflow: hidden;
-          margin-bottom: 30px;
-          img {
+      h2, h3 {
+        font-family: $font_title;
+      }
+      p {
+        font-family: $font_body;
+      }
+    }
+    img {
+      z-index:1;
+      padding-left:0px;
+
+    }
+    .filter {
+      position: absolute;
+      height: 100%;
+      background-color:rgba(0, 0, 0, 0.5);
+      z-index:2;
+    }
+    .container{
+      p {
+        font-family: $font_body;
+      }
+      h2 {
+        font-family: $font_title;
+      }
+      .testimony-container {
+        margin-bottom: 20px;
+        .right {
+          .crop-right  {
+            padding-left: 30px;
+            padding-right: 0;
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            img {
+              width: 100%;
+            }
+          }
+        }
+        .left {
+          .crop-left {
+            position: relative;
             height: 430px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            img {
+              height: 430px;
+            }
           }
         }
       }
-    }
-    span {
-      padding:15px 30px 15px 30px;
-      background-color: #d13d3d;
+
     }
   }
-}
-.twitter {
-  padding-bottom: 30px;
-  padding-top: 30px;
-  text-align: center;
-  background-color: #f6f6f6;
-}
-.stats {
-  padding-bottom: 30px;
-  padding-top: 30px;
-  text-align: center;
-  h2 {
-    font-family: 'Open Sans', sans-serif;
+  .twitter {
+    text-align: center;
+    background-color: #f6f6f6;
   }
-  p {
-    font-family: 'Roboto Slab', serif;
+  .stats {
+    text-align: center;
+
   }
 }

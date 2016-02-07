@@ -1,64 +1,93 @@
 {% extends 'base.html.twig' %}
 {% block content %}
-    <div class="row slider">
-    </div>
-    <div class="row brand">
-        <div class="col-sm-10 col-sm-offset-1">
-            <h2>LE 4L TROPHY</h2>
-            <p>Le Raid 4L Trophy est un raid automobile humanitaire destiné aux étudiants créé par Jean-Jacques Rey. Il est organisé par l'entreprise Desertours en partenariat avec l’école supérieur de commerce de Rennes.
-                Le Raid 4L Trophy a lieu chaque année. Les participants, âgés de 18 à 28 ans, disputent cette course d'orientation, réalisée exclusivement en Renault 4. Le parcours traversant la France, l’Espagne et le Maroc, et contient certaines étapes autour des dunes de Merzouga et dans l'Atlas.</p>
-            <span>En savoir plus</span>
+    <div class="home">
+        <div class="row carrousel hidden-sm hidden-xs">
+            {% include 'Templates/slider.html.twig' %}
         </div>
-    </div>
-    <div class="row adventure">
-        <div class="container col-sm-10 col-sm-offset-1">
-            <div class="photo col-sm-5">
-                <img src="{{ asset('img/petm.jpeg') }}" alt="">
-            </div>
-            <div class="text col-sm-6 col-sm-offset-1">
-                <h2>Suivez l'aventure de ces deux étudiantes en photo, vidéos, ...</h2>
-                <p>Durant les 14 jours d’aventure, deux étudiantes inscrites à l’aventure du 4L Trophy 2016 vont nous partager leur expérience. A travers un RoadBook de leurs itinéraires, vous pourrez découvrir des moments marquants de leurs journées à travers des photographies et des vidéos. Des images à vous couper le souffle, et de quoi vous donnez un aperçu de l’aventure sur le terrain. </p>
-                <span>En savoir plus</span>
+        <div class="row brand">
+            <div class="col-sm-10 col-sm-offset-1">
+                <h2>LE 4L TROPHY</h2>
+                <p>Le Raid 4L Trophy est un raid automobile humanitaire destiné aux étudiants créé par Jean-Jacques Rey. Il est organisé par l'entreprise Desertours en partenariat avec l’école supérieur de commerce de Rennes.
+                    Le Raid 4L Trophy a lieu chaque année. Les participants, âgés de 18 à 28 ans, disputent cette course d'orientation, réalisée exclusivement en Renault 4. Le parcours traversant la France, l’Espagne et le Maroc, et contient certaines étapes autour des dunes de Merzouga et dans l'Atlas.</p>
+                    <span><a href="">En savoir plus</a></span>
             </div>
         </div>
-    </div>
-    <div class="row testimony">
-        <div class="container col-sm-10 col-sm-offset-1">
-            <h2>TEMOIGNAGES</h2>
-            <p>Des participants d’anciennes éditions ont voulu vous partager leurs expériences. <br>Ils vous racontent leurs expériences allant de leurs préparations jusqu’à leurs déscentes à Marrakech.
-            </p>
-            <div class="testimony-container col-sm-12">
-                <div class="left col-sm-4">
-                    <div class="row">
-                        <div class="crop-left col-sm-12">
-                            <img src="{{ asset('img/petm.jpeg') }}" alt="">
+        <div class="row adventure">
+            <div class="container col-sm-10 col-sm-offset-1">
+                <h2>L'aventure Pauline & Margaux</h2>
+                <div class="photo col-sm-5">
+                    <img src="{{ asset('img/petm.jpeg') }}" alt="">
+                </div>
+                <div class="text col-sm-6 col-sm-offset-1">
+                    <h3>Suivez l'aventure de ces deux étudiantes en photo, vidéos, ...</h3>
+                    <p>Durant les 14 jours d’aventure, deux étudiantes inscrites à l’aventure du 4L Trophy 2016 vont nous partager leur expérience. A travers un RoadBook de leurs itinéraires, vous pourrez découvrir des moments marquants de leurs journées à travers des photographies et des vidéos. Des images à vous couper le souffle, et de quoi vous donnez un aperçu de l’aventure sur le terrain. </p>
+                    <span><a href="">En savoir plus</a></span>
+                </div>
+            </div>
+        </div>
+        <div class="row testimony">
+            <div class="container col-sm-10 col-sm-offset-1">
+                <h2>TEMOIGNAGES</h2>
+                <p>Des participants d’anciennes éditions ont voulu vous partager leurs expériences. <br>Ils vous racontent leurs expériences allant de leurs préparations jusqu’à leurs déscentes à Marrakech.
+                </p>
+                <div class="testimony-container col-sm-12">
+                    <div class="left col-sm-4">
+                        <div class="row">
+                            <div class="crop-left col-sm-12">
+                                <div class="filter col-sm-12">
+                                    <div class="content col-sm-10 col-sm-offset-1">
+                                        <p>DÉCOUVREZ LE TÉMOIGNAGE</p>
+                                        <h3>PAULINE & MARGAUX</h3>
+                                        <p>En plus de pouvoir suivre leurs aventure, Pauline et Margaux vous donnent leur
+                                            ressentis sur l'aventure</p>
+                                    </div>
+                                </div>
+                                <img src="{{ asset('img/petm.jpeg') }}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right col-sm-8">
+                        <div class="row">
+                            <div class="crop-right col-sm-12">
+                                <div class="filter col-sm-12">
+                                    <div class="content col-sm-8 col-sm-offset-2">
+                                        <p>DÉCOUVREZ LE TÉMOIGNAGE</p>
+                                        <h3>PAULINE & MARGAUX</h3>
+                                        <p>En plus de pouvoir suivre leurs aventure, Pauline et Margaux vous donnent leur
+                                            ressentis sur l'aventure</p>
+                                    </div>
+                                </div>
+                                <img src="{{ asset('img/petm.jpeg') }}" alt="">
+                            </div>
+                            <div class="crop-right col-sm-12">
+                                <div class="filter col-sm-12">
+                                    <div class="content col-sm-8 col-sm-offset-2">
+                                        <p>DÉCOUVREZ LE TÉMOIGNAGE</p>
+                                        <h3>PAULINE & MARGAUX</h3>
+                                        <p>En plus de pouvoir suivre leurs aventure, Pauline et Margaux vous donnent leur
+                                            ressentis sur l'aventure</p>
+                                    </div>
+                                </div>
+                                <img src="{{ asset('img/petm.jpeg') }}" alt="">
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="right col-sm-8">
-                    <div class="row">
-                        <div class="crop-right col-sm-12">
-                            <img class="col-sm-12" src="{{ asset('img/petm.jpeg') }}" alt="">
-                        </div>
-                        <div class="crop-right col-sm-12">
-                            <img class="col-sm-12" src="{{ asset('img/petm.jpeg') }}" alt="">
-                        </div>
-                    </div>
-                </div>
+                <span><a href="">En savoir plus</a></span>
             </div>
-            <span>En savoir plus</span>
-        </div>
 
-    </div>
-    <div class="row twitter">
-        <div class="container col-sm-10 col-sm-offset-1">
-            <p>le #4LTrophy, une experience de dingue, merci à tous pour votre soutient</p>
+        </div>
+        <div class="row twitter">
+            <div class="container col-sm-10 col-sm-offset-1">
+                <p>le #4LTrophy, une experience de dingue, merci à tous pour votre soutient</p>
+            </div>
+        </div>
+        <div class="row stats">
+            <div class="container col-sm-10 col-sm-offset-1">
+                <h2>EQUIPAGES</h2>
+                <p>Quelques chiffres sur le nombre de participants chaque années</p>
+                <div class="dataviz col-sm-10 col-sm-offset-1"></div>
+            </div>
         </div>
     </div>
-    <div class="row stats">
-        <div class="container col-sm-10 col-sm-offset-1">
-            <h2>EQUIPAGES</h2>
-            <p>Quelques chiffres sur le nombre de participants chaque années</p>
-            <div class="dataviz col-sm-10 col-sm-offset-1"></div>
-        </div>
 {% endblock %}

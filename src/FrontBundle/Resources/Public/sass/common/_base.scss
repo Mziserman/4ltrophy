@@ -1,0 +1,19 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto+Slab:400,700,300);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,400italic,300italic,300);
+
+$font_title : 'Open Sans', sans-serif;
+$font_body : 'Roboto Slab', serif;
+
+h2 {
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  font-family: 100% $font_title;
+  font-weight: 400;
+}
+body {
+  p {
+    font-family: 100% $font_body;
+    font-weight: 400;
+  }
+}
+

@@ -20,14 +20,14 @@
             <div class="row">
                 <nav class="nav_wrapper col-sm-12">
                     <ul class="nav_list center-block">
-                        <li><img src="{{ asset('/img/logo.png') }}" alt=""></li>
-                        {% for name in navigation %}
-                            <li {% if name == "Accueil" %}class="active"{% endif %}><a href="">{{ name }}</a></li>
+                        <li><a href="{{ path('front_homepage') }}"><img src="{{ asset('/img/logo.png') }}" alt=""></a></li>
+                        {% for nav in navigation %}
+                            <li {% if nav.name == current %}class="active"{% endif %}><a href="{{ path(nav.slug) }}">{{ nav.name }}</a></li>
                         {% endfor %}
                         <li>
-                            <button class="donate">
-                                Faire un don
-                            </button>
+                            <span>
+                                <a href="">S'INSCRIRE</a>
+                            </span>
                         </li>
                     </ul>
                 </nav>
