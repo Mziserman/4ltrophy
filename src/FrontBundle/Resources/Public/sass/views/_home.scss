@@ -18,6 +18,17 @@
   .brand  {
     padding-bottom: 50px;
     text-align: center;
+
+
+    overflow: hidden;
+    .background_4l {
+      position: absolute;
+      width: 502px;
+      height: 217px;
+      left: -100px;
+      background-repeat:no-repeat;
+      background-size: 502px 217px;
+    }
     h2 {
       font-family: $font_title;
       text-align: center;
@@ -42,6 +53,9 @@
       position: relative;
       overflow: hidden;
       padding: 10px;
+      img {
+        float: right;
+      }
     }
     .text {
       padding:10px;
