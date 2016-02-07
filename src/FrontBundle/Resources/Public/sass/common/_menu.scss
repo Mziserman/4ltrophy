@@ -1,4 +1,6 @@
 .nav_wrapper {
+  background-color: #fff;
+  z-index:1000;
   padding:10px;
   .nav_list {
     float: none;
@@ -14,7 +16,7 @@
           text-transform: uppercase;
           font-family: 'Open Sans', sans-serif;
           font-weight: 400;
-          font-size: 18px;
+          font-size: 16px;
           text-decoration: none;
           margin-right: 15px;
           color: #444d4f;
@@ -24,7 +26,7 @@
           background-color: #d13d3d;
           font-family: 'Open Sans', sans-serif;
           font-weight: 400;
-          font-size: 18px;
+          font-size: 16px;
           text-decoration: none;
           color: #fff;
         }
@@ -33,7 +35,7 @@
       a {
         font-family: 'Open Sans', sans-serif;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 16px;
         text-decoration: none;
         margin-right: 15px;
         color: #d13d3d;

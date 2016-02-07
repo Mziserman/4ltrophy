@@ -12,7 +12,7 @@
   .row  {
     overflow: hidden;
   }
-  .commentary:nth-child(odd) {
+  .commentary:nth-child(even) {
     .bulle {
       &:after {
         content: '';
@@ -27,7 +27,7 @@
       }
     }
   }
-  .commentary:nth-child(even) {
+  .commentary:nth-child(odd) {
     .bulle {
       &:after {
         content: '';
