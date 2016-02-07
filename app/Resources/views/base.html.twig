@@ -20,9 +20,11 @@
             <div class="row">
                 <nav class="nav_wrapper col-sm-12">
                     <ul class="nav_list center-block">
-                        <li><a href="{{ path('front_homepage') }}"><img src="{{ asset('/img/logo.png') }}" alt=""></a></li>
-                        {% for nav in navigation %}
-                            <li {% if nav.name == current %}class="active"{% endif %}><a href="{{ path(nav.slug) }}">{{ nav.name }}</a></li>
+                        <li><img src="{{ asset('/img/logo.png') }}" alt=""></li>
+                        {% set currentRoute = app.request.attributes.get('_route') %}
+                        {% for name, route in navigation %}
+                            {% set path = (route ? path(route) : '') %}
+                            <li {% if route == currentRoute %}class="active"{% endif %}><a href="{{ path }}">{{ name }}</a></li>
                         {% endfor %}
                         <li>
                             <span>
