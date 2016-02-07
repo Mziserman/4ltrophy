@@ -1,0 +1,57 @@
+.preparation {
+  .bigPicture {
+    height: 400px;
+    overflow: hidden;
+      img{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-30%);
+      }
+  }
+  .row  {
+    overflow: hidden;
+  }
+  .commentary:nth-child(odd) {
+    .bulle {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        left:-50px;
+        width: 0;
+        height: 0;
+
+        border-right: 50px solid #f6f6f6;
+        border-bottom: 20px solid transparent;
+      }
+    }
+  }
+  .commentary:nth-child(even) {
+    .bulle {
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 10px;
+        right:-50px;
+        width: 0;
+        height: 0;
+
+        border-left: 50px solid #f6f6f6;
+        border-bottom: 20px solid transparent;
+      }
+    }
+  }
+  .bulle {
+    margin-top: 20px;
+    padding:0 20px 20px 20px;
+    background-color: #f6f6f6;
+    border-radius: 5px;
+    .icon {
+      margin-top: 25px;
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
