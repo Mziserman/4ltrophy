@@ -2,6 +2,22 @@ front_homepage:
     path:     /
     defaults: { _controller: FrontBundle:Default:index }
 
+front_testimony:
+    path:     /temoignage
+    defaults: { _controller: FrontBundle:Default:testimony }
+
+front_presentation:
+    path:     /presentation
+    defaults: { _controller: FrontBundle:Default:presentation }
+
+front_trip:
+    path:     /trip
+    defaults: { _controller: FrontBundle:Default:trip }
+
+front_preparation:
+    path:     /preparation
+    defaults: { _controller: FrontBundle:Default:preparation }
+
 front_test_api:
     path:     /test-api
     defaults: { _controller: FrontBundle:Default:testApi }

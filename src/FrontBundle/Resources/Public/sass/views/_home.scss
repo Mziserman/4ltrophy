@@ -3,15 +3,6 @@
     padding-bottom: 30px;
     padding-top: 30px;
   }
-  h2 {
-    text-transform: uppercase;
-    margin-bottom: 40px;
-    font-family: 'Open Sans', sans-serif;
-  }
-  p {
-    margin-bottom: 50px;
-    font-family: 'Roboto Slab', serif;
-  }
   span {
     padding:15px 30px 15px 30px;
     background-color: #d13d3d;
@@ -28,9 +19,11 @@
     padding-bottom: 50px;
     text-align: center;
     h2 {
+      font-family: $font_title;
       text-align: center;
     }
     p {
+      font-family: $font_body;
       text-align: center;
       margin-bottom: 50px;
     }
@@ -39,7 +32,11 @@
   .adventure {
     background: #f6f6f6;
     h2 {
+      font-family: $font_title;
       text-align: center;
+    }
+    p {
+      font-family: $font_body;
     }
     .photo {
       position: relative;
@@ -68,8 +65,11 @@
       p, h3 {
         color: #fff;
       }
+      h2, h3 {
+        font-family: $font_title;
+      }
       p {
-        font-family: 'Roboto Slab', serif;
+        font-family: $font_body;
       }
     }
     img {
@@ -84,6 +84,12 @@
       z-index:2;
     }
     .container{
+      p {
+        font-family: $font_body;
+      }
+      h2 {
+        font-family: $font_title;
+      }
       .testimony-container {
         margin-bottom: 20px;
         .right {
