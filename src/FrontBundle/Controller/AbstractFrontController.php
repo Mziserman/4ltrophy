@@ -4,18 +4,28 @@ namespace FrontBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
+/**
+ * Class AbstractFrontController
+ * @package FrontBundle\Controller
+ */
 abstract class AbstractFrontController extends Controller
 {
+    /**
+     * @var array
+     */
     private $navigation;
 
+    /**
+     * AbstractFrontController constructor.
+     */
     public function __construct()
     {
         $this->navigation = [
             "Accueil" => 'front_homepage',
-            "Présentation" => '',
-            "Pauline & Margaux" => 'front_personal_timeline',
-            "Préparation" => '',
-            "Témoignages" => '',
+            "Présentation" => 'front_presentation',
+            "Pauline & Margaux" => 'front_trip',
+            "Préparation" => 'front_preparation',
+            "Témoignages" => 'front_testimony',
         ];
     }
 
