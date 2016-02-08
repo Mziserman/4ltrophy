@@ -19,6 +19,6 @@ parameters:
     secret:            ThisTokenIsNotSoSecretChangeIt
 
 
-    facebook-page-id: 411004309099590
-    facebook-app-id: 473781112831532
-    facebook-app-secret: f3aa39813077df6fcc75e2473bea9c38
+    facebook_page_id: 411004309099590
+    facebook_app_id: 473781112831532
+    facebook_app_secret: f3aa39813077df6fcc75e2473bea9c38
