@@ -60,6 +60,9 @@ gulp.task('watch', function () {
         .on('change', onChange);
 });
 
-
+gulp.task('video', function() {
+    return gulp.src("./src/FrontBundle/Resources/Public/videos/**")
+        .pipe(gulp.dest('./web/videos'));
+});
 
 gulp.task('default', ['js', 'sass', 'img', 'vendors']);
