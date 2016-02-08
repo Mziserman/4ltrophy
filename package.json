@@ -4,8 +4,10 @@
   "description": "4L Trophy, Team 1, AO =====================",
   "main": "Gulpfile.js",
   "dependencies": {
+    "delete": "^0.3.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^2.4.0",
     "gulp-sass": "^2.2.0"
   },
   "devDependencies": {},

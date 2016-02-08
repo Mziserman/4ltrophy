@@ -1,8 +1,8 @@
 services:
     utils.facebook.feed_catcher:
         class: FrontBundle\Utils\Facebook\FacebookFeedCatcher
-        arguments: ["@utils.facebook_app", %facebook-page-id%]
+        arguments: ["@utils.facebook_app", %facebook_page_id%]
 
     utils.facebook_app:
         class: Facebook\FacebookApp
-        arguments: [%facebook-app-id%, %facebook-app-secret%]
+        arguments: [%facebook_app_id%, %facebook_app_secret%]

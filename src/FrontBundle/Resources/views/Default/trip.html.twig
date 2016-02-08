@@ -1,4 +1,58 @@
 {% extends 'base.html.twig' %}
 {% block content %}
-
+    <div class="trip">
+        <div class="row banner hidden-sm hidden-xs">
+            <div class="text-container">
+                <h3>Suivez l'aventure</h3>
+                <h2>Pauline et Margaux</h2>
+            </div>
+        </div>
+        <div class="row brand">
+            <div class="col-sm-8 col-sm-offset-2">
+                <h2>Leur trajet</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore nobis perspiciatis recusandae voluptatibus! Aperiam autem deleniti doloribus error expedita incidunt ipsa maiores mollitia quos velit. Ad corporis deserunt odit!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore nobis perspiciatis recusandae voluptatibus! Aperiam autem deleniti doloribus error expedita incidunt ipsa maiores mollitia quos velit. Ad corporis deserunt odit!
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo inventore nobis perspiciatis recusandae voluptatibus! Aperiam autem deleniti doloribus error expedita incidunt ipsa maiores mollitia quos velit. Ad corporis deserunt odit!
+                </p>
+            </div>
+        </div>
+        <div class="row content">
+            <div class="post end col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                <h4>Ville finale</h4>
+            </div>
+            {% for post in timelineObject %}
+                <div class="post {% if loop.last %}last{% elseif loop.first %}first{% endif %} normal-post col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                    <h4>Actualité du {{ post.createdTime|date('d/m/Y') }}</h4>
+                    <p class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">{{ post.message | converturls }}</p>
+                    {#{{ dump(post) }}#}
+                    {% if (post.photos or post.videos) is not empty %}
+                        <div class="col-sm-12 col-md-12 attachments">
+                            {% if post.photos is not empty %}
+                                {% for photo in post.photos %}
+                                    <a href="{{ photo }}" data-lightbox="{{ post.createdTime|date('d/m/Y') }}">
+                                        <img src="{{ photo }}" alt="">
+                                    </a>
+                                {% endfor %}
+                            {% elseif post.videos is not empty %}
+                                {% for video in post.videos %}
+                                    <div class="fb-video" data-href="{{ video }}" data-width="500">
+                                        <div class="fb-xfbml-parse-ignore">
+                                            <blockquote cite="{{ video }}">
+                                                <a href="{{ video }}"></a>
+                                                <p>test</p>
+                                            </blockquote>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            {% endfor %}
+            <div class="post beginning col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                <h4>Départ - Ville de départ</h4>
+            </div>
+        </div>
+    </div>
 {% endblock %}
