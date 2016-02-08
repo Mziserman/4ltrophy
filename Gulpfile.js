@@ -45,6 +45,11 @@ gulp.task('img', function() {
         .pipe(gulp.dest('./web/img'));
 });
 
+gulp.task('vendors', function() {
+    return gulp.src('./src/FrontBundle/Resources/Public/vendors/**')
+        .pipe(gulp.dest('./web/vendors'));
+});
+
 gulp.task('watch', function () {
     var onChange = function (event) {
         console.log('File '+event.path+' has been '+event.type);
@@ -57,4 +62,4 @@ gulp.task('watch', function () {
 
 
 
-gulp.task('default', function () {});
+gulp.task('default', ['js', 'sass', 'img', 'vendors']);
