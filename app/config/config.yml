@@ -37,6 +37,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        facebook_app_id: "%facebook_app_id%"
 
 # Doctrine Configuration
 doctrine:
@@ -78,3 +80,8 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: BackBundle\Entity\User
+
+liip_url_auto_converter:
+    linkclass:
+    target: _blank
+    debugmode: false
