@@ -1,4 +1,13 @@
 .presentation{
+  p {
+    color: #888888;
+    font-family: "Roboto Slab", serif;
+  }
+  h2 {
+    color: #333333;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+  }
   .bigPicture, .video {
     height: 400px;
     overflow: hidden;
@@ -18,9 +27,22 @@
     }
     .container {
       margin:15px 0 15px 0;
+      h2 {
+        margin:20px 0 20px 0;
+        text-align: left;
+      }
       img {
         width: 100%;
       }
+    }
+  }
+  .inter {
+    h2 {
+      margin:20px 0 20px 0;
+      text-align: center;
+    }
+    p {
+      text-align: center;
     }
   }
 
