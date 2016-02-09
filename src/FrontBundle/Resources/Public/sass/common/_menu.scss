@@ -23,7 +23,7 @@
         }
         span a {
           padding:15px 30px 15px 30px;
-          background-color: #d13d3d;
+          background-color: $main_red;
           font-family: 'Open Sans', sans-serif;
           font-weight: 400;
           font-size: 16px;
@@ -38,7 +38,7 @@
         font-size: 16px;
         text-decoration: none;
         margin-right: 15px;
-        color: #d13d3d;
+        color: $main_red;
       }
     }
   }

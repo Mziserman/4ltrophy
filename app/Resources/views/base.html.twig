@@ -8,8 +8,11 @@
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
 
         <!-- Latest compiled and minified CSS -->
-        <link href="{{ asset('/css/master.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('/vendors/lightbox/css/lightbox.min.css') }}">
+        <link href="{{ asset('/css/master.css') }}" rel="stylesheet">
+    {% endblock %}
+
+    {% block javascript_preload %}
     {% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
@@ -33,7 +36,7 @@
                         {% set currentRoute = app.request.attributes.get('_route') %}
                         {% for name, route in navigation %}
                             {% set path = (route ? path(route) : '') %}
-                            <li class="hidden-xs" {% if route == currentRoute %}class="""active"{% endif %}><a href="{{ path }}">{{ name }}</a></li>
+                            <li class="hidden-xs {% if route == currentRoute %}active{% endif %} "><a href="{{ path }}">{{ name }}</a></li>
                         {% endfor %}
 
                         <li class="hidden-sm hidden-lg hidden-md dropdown">
@@ -51,7 +54,7 @@
 
                         <li>
                             <span>
-                                <a href="">S'INSCRIRE</a>
+                                <a href="">SE PRÉINSCRIRE</a>
                             </span>
                         </li>
                     </ul>
@@ -63,6 +66,7 @@
 {% endblock %}
 {% block javascripts %}
     <script src="{{ asset('/vendors/lightbox/js/lightbox-plus-jquery.min.js') }}"></script>
+    <script src="{{ asset('/vendors/countdown/jquery.countdown.min.js') }}"></script>
     <script src="{{ asset('/js/scripts.js') }}"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
