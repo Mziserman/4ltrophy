@@ -66,6 +66,16 @@ class DefaultController extends AbstractFrontController
         ]);
     }
 
+    public function getTwitterTweetsAction()
+    {
+        $twitterTweetsCatcher = $this->container->get('utils.twitter.tweets_catcher');
+        $results = $twitterTweetsCatcher->getTweets();
+
+        return $this->render('@Front/Default/render/getTweets.html.twig', [
+            'tweets' => $results,
+        ]);
+    }
+
     private function prepareProgressBarInformations(\Datetime $startingDate, \Datetime $endingDate)
     {
         $progressBar = [];

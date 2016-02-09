@@ -6,3 +6,6 @@ services:
     utils.facebook_app:
         class: Facebook\FacebookApp
         arguments: [%facebook_app_id%, %facebook_app_secret%]
+
+    utils.twitter.tweets_catcher:
+        class: FrontBundle\Utils\Twitter\TwitterTweetsCatcher
