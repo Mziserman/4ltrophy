@@ -46,8 +46,34 @@ class DefaultController extends AbstractFrontController
 
         $timelineObject = $facebookCatcher->getFeed();
 
+        $startingDate = new \DateTime($this->getParameter('starting_date'));
+        $endingDate = new \DateTime($this->getParameter('ending_date'));
+
+        $progressBar = $this->prepareProgressBarInformations($startingDate, $endingDate);
+
         return $this->render('FrontBundle:Default:trip.html.twig', [
             'timelineObject' => $timelineObject,
+            'endingDate' => $endingDate,
+            'startingDate' => $startingDate,
+            'progressBar' => $progressBar,
         ]);
+    }
+
+    private function prepareProgressBarInformations(\Datetime $startingDate, \Datetime $endingDate)
+    {
+        $progressBar = [];
+
+        $now = new \DateTime();
+
+        // Between the beginning and the end of the event
+        $totalIterval = $startingDate->diff($endingDate);
+        // Between the beginning and now
+        $alreadyDone = $startingDate->diff($now);
+
+        $progressBar['total_interval'] = ($totalIterval->invert ? -1 * ($totalIterval->format('%a')) : $totalIterval->format('%a'));
+        $progressBar['already_done'] = ($alreadyDone->invert ? -1 * ($alreadyDone->format('%a')) : $alreadyDone->format('%a'));
+        $progressBar['current_interval'] = $progressBar['total_interval'] - $progressBar['already_done'];
+
+        return $progressBar;
     }
 }
