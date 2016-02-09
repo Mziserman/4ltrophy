@@ -52,24 +52,32 @@ function drawChart() {
         },
     };
 
-    // Instantiate and draw the chart.
-    var chart = new google.visualization.AreaChart(document.getElementById('dataviz'));
-    chart.draw(data, options);
+    if (route == 'front_homepage') {
+         // Instantiate and draw the chart.
+        var chart = new google.visualization.AreaChart(document.getElementById('dataviz'));
+        chart.draw(data, options);
+    }
 };
 
 $(document).ready(function(){
-    $('.trip .progress-bar-container .progress-bar').css('width', finalStep + '%');
-    $('.trip .progress-bar-container .car').css('left', finalStep + '%').css('opacity', 100);
 
-    $('#countdown')
-        .countdown(startingDate, function(event) {
-            $(this).html(
-                event.strftime(
-                    "<h3 class='text'> " +
-                        "L'aventure de Pauline et Margaux commence dans <br>" +
-                    "</h3>"+
-                    "<div><span class='label label-primary'><strong>%Dj %H:%M:%S </strong></span></div>"
-                )
-            );
-        });
+    // front_trip part
+    if (route == 'front_trip') {
+
+        $('.trip .progress-bar-container .progress-bar').css('width', finalStep + '%');
+        $('.trip .progress-bar-container .car').css('left', finalStep + '%').css('opacity', 100);
+
+        $('#countdown')
+            .countdown(startingDate, function(event) {
+                $(this).html(
+                    event.strftime(
+                        "<h3 class='text'> " +
+                            "L'aventure de Pauline et Margaux commence dans <br>" +
+                        "</h3>"+
+                        "<div><span class='label label-primary'><strong>%Dj %H:%M:%S </strong></span></div>"
+                    )
+                );
+            });
+
+    }
 });
