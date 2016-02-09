@@ -8,8 +8,10 @@ body {
   h2 {
     text-transform: uppercase;
     margin-bottom: 40px;
-    font-family: 100% $font_title;
-    font-weight: 400;
+    color: #333333;
+    font-family: 'Open Sans', sans-serif;
+
+    font-weight: bold;
   }
 }
 p {

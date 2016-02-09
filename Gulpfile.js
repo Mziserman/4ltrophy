@@ -17,8 +17,6 @@ gulp.task('js', function() {
     });
 
     gulp.src([
-            './web/components/jquery/dist/jquery.min.js',
-            './web/components/bootstrap-sass/assets/javascripts/bootstrap/*.js',
             './src/FrontBundle/Resources/Public/js/**/*.js',
         ])
         .pipe(concat('scripts.js'))
