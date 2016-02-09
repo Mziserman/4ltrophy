@@ -27,16 +27,6 @@
       font-family: $font_title;
       text-align: center;
 
-      &::before, &::after {
-        content: ' ';
-        display: inline-block;
-        vertical-align: middle;
-        width: 25px;
-        height: 30px;
-        background: url('../img/losange.svg');
-        background-size: 100% auto;
-        background-repeat: no-repeat;
-      }
 
       &::before {
         margin-right: 40px;
@@ -168,6 +158,11 @@
   }
   .stats {
     text-align: center;
-
+    .dataContainer {
+      width: 1000px;
+      .dataviz {
+        margin:0 auto;
+      }
+    }
   }
 }
