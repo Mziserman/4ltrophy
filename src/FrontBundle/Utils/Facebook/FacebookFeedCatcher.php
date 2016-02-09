@@ -15,7 +15,13 @@ use FrontBundle\ValueObjects\TimeLineObject;
  */
 class FacebookFeedCatcher
 {
+    /**
+     *
+     */
     CONST STATUS_TYPE_PHOTOS = 'added_photos';
+    /**
+     *
+     */
     CONST STATUS_TYPE_VIDEO = 'added_video';
 
     /**
@@ -34,15 +40,27 @@ class FacebookFeedCatcher
     protected $facebookAccessToken;
 
     /**
+     * @var string
+     */
+    protected $startingDate;
+
+    /**
+     * @var string
+     */
+    protected $endingDate;
+
+    /**
      * FacebookFeedCatcher constructor.
      * @param FacebookApp $facebookApp
      * @param $facebookPageId
+     * @param $startingDate
      */
-    public function __construct(FacebookApp $facebookApp, $facebookPageId)
+    public function __construct(FacebookApp $facebookApp, $facebookPageId, $startingDate)
     {
         $this->facebookApp = $facebookApp;
         $this->facebookPageId = $facebookPageId;
         $this->facebookAccessToken = $this->facebookApp->getAccessToken();
+        $this->startingDate = $startingDate;
     }
 
     /**
@@ -50,15 +68,15 @@ class FacebookFeedCatcher
      */
     public function getFeed()
     {
-        $sinceDate = new \DateTime('2016-02-01');
+        $sinceDate = new \DateTime($this->startingDate);
         $request = new FacebookRequest(
             $this->facebookApp,
             $this->facebookAccessToken,
             'GET',
             sprintf('/%d/posts', $this->facebookPageId),
             [
-                'fields' => 'message, created_time, status_type, object_id, attachments',
-                'since' => $sinceDate->getTimestamp()
+                'fields' => 'message, created_time, status_type, attachments, place',
+                'since' => $sinceDate->getTimestamp(),
             ]
         );
 
@@ -74,26 +92,32 @@ class FacebookFeedCatcher
             $response = $fb->getClient()->sendRequest($request);
         } catch(FacebookResponseException $e) {
             // When Graph returns an error
-            dump( 'Graph returned an error: ' . $e->getMessage());
+            echo( 'Graph returned an error: ' . $e->getMessage());
             exit;
         } catch(FacebookSDKException $e) {
             // When validation fails or other local issues
-            dump( 'Facebook SDK returned an error: ' . $e->getMessage());
+            echo( 'Facebook SDK returned an error: ' . $e->getMessage());
             exit;
         }
+
 
         $timelineObject = $this->timelineObjectFiller($response->getGraphEdge());
 
         return $timelineObject;
     }
 
+    /**
+     * @param GraphEdge $graphEdge
+     * @return array
+     */
     protected function timelineObjectFiller(GraphEdge $graphEdge)
     {
         // Sorry for what's next, but what Facebook api returns is a mess, and the view looks like garbage if we make this work in it
 
         $timeline = [];
         foreach ($graphEdge as $graphNode) {
-            $timelineObject = new TimeLineObject($graphNode['id'], $graphNode['created_time']);
+            $place = (!empty($graphNode['place'])? $graphNode['place'] : null);
+            $timelineObject = new TimeLineObject($graphNode['id'], $graphNode['created_time'], $place);
 
             if (isset($graphNode['message'])) {
                 $timelineObject->setMessage($graphNode['message']);

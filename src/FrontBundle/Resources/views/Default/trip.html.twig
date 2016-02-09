@@ -1,5 +1,16 @@
 {% extends 'base.html.twig' %}
+
+
+{% if date() >= endingDate %}
+    {% set step = 100 %}
+{% elseif progressBar['current_interval'] < 0 %}
+    {% set step = -1 %}
+{% else %}
+    {% set step = (progressBar['already_done'] / progressBar['total_interval'])*100 %}
+{% endif %}
+
 {% block content %}
+
     <div class="trip">
         <div class="row banner hidden-sm hidden-xs">
             <div class="text-container">
@@ -18,41 +29,106 @@
             </div>
         </div>
         <div class="row content">
-            <div class="post end col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-                <h4>Ville finale</h4>
-            </div>
-            {% for post in timelineObject %}
-                <div class="post {% if loop.last %}last{% elseif loop.first %}first{% endif %} normal-post col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-                    <h4>Actualité du {{ post.createdTime|date('d/m/Y') }}</h4>
-                    <p class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">{{ post.message | converturls }}</p>
-                    {#{{ dump(post) }}#}
-                    {% if (post.photos or post.videos) is not empty %}
-                        <div class="col-sm-12 col-md-12 attachments">
-                            {% if post.photos is not empty %}
-                                {% for photo in post.photos %}
-                                    <a href="{{ photo }}" data-lightbox="{{ post.createdTime|date('d/m/Y') }}">
-                                        <img src="{{ photo }}" alt="">
-                                    </a>
-                                {% endfor %}
-                            {% elseif post.videos is not empty %}
-                                {% for video in post.videos %}
-                                    <div class="fb-video" data-href="{{ video }}" data-width="500">
-                                        <div class="fb-xfbml-parse-ignore">
-                                            <blockquote cite="{{ video }}">
-                                                <a href="{{ video }}"></a>
-                                                <p>test</p>
-                                            </blockquote>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            {% endif %}
+            {% if step >= 0 %}
+                <div class="progress-bar-container col-md-8 col-md-offset-2">
+                    <div class="pull-left">{{ startingDate|date('d/m') }}</div>
+                    <div class="pull-right">{{ endingDate|date('d/m') }}</div>
+                    <div class="car" style="left:0%; opacity: 0;"></div>
+                    <div class="clearfix"></div>
+                    <div class="progress">
+
+                        {% if step == 100 %}
+                            <div class="progress-bar progress-bar-success" role="progressbar"
+                                 aria-valuenow="{{ step }}" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                {{ step|round }}% parcourus
+                            </div>
+                        {% else %}
+                            <div class="progress-bar" role="progressbar"
+                                 aria-valuenow="{{ step }}" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+                                {{ step|round }}% parcourus
+                                </div>
+                        {% endif %}
+                    </div>
+                </div>
+            {% endif %}
+            {% if startingDate > date() %}
+                <div id="countdown"></div>
+            {% else %}
+                {% if timelineObject is empty %}
+                    <div class="normal-post col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 post first last">
+                        Du contenu arrivera prochainement
+                    </div>
+                {% else %}
+                    {% if date() >= endingDate %}
+                        <div class="post end col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                            <h4>Ville finale</h4>
                         </div>
                     {% endif %}
+
+                    {% set lastCreatedTime = null %}
+                    {% for post in timelineObject %}
+
+                        <div class="post {% if loop.last %}last{% elseif loop.first %}first{% endif %}
+                            normal-post col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                            {% if lastCreatedTime != post.createdTime|date('d/m/Y') %}
+                                {% set lastCreatedTime = post.createdTime|date('d/m/Y') %}
+                                <h4>
+                                    Actualité du {{ post.createdTime|date('d/m/Y') }}
+                                </h4>
+                            {% endif %}
+                            <p class="hour">
+                                {{ post.createdTime|date('H:i') }}
+                                {% if post.place is not null %}
+                                    <strong>, à {{ post.place.location.city|capitalize }}</strong>
+                                {% endif %}
+                            </p>
+
+                            {% if post.message is not null %}
+                                <p class="col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 well">{{ post.message | converturls }}</p>
+                            {% endif %}
+
+                            {% if (post.photos or post.videos) is not empty %}
+                                <div class="col-sm-12 col-md-12 attachments">
+                                    {% if post.photos is not empty %}
+                                        {% for photo in post.photos %}
+                                            <a href="{{ photo }}" data-lightbox="{{ post.createdTime|date('d/m/Y') }}">
+                                                <img src="{{ photo }}" alt="">
+                                            </a>
+                                        {% endfor %}
+                                    {% elseif post.videos is not empty %}
+                                        {% for video in post.videos %}
+                                            <div class="fb-video" data-href="{{ video }}">
+                                                <div class="fb-xfbml-parse-ignore">
+                                                    <blockquote cite="{{ video }}">
+                                                        <a href="{{ video }}"></a>
+                                                        <p>test</p>
+                                                    </blockquote>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+
+                {% endif %}
+                <div class="post beginning col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
+                    <h4>Départ - Ville de départ</h4>
                 </div>
-            {% endfor %}
-            <div class="post beginning col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1">
-                <h4>Départ - Ville de départ</h4>
-            </div>
+
+            {% endif %}
         </div>
+
+        <div class="row footer-banner"></div>
     </div>
+{% endblock %}
+
+
+{% block javascript_preload %}
+    {{ parent() }}
+    <script>
+        var finalStep = {{ step|round }};
+        var startingDate = '{{ startingDate|date('Y/m/d') }}';
+    </script>
 {% endblock %}

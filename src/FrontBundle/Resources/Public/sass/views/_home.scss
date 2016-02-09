@@ -26,15 +26,6 @@
     h2 {
       font-family: $font_title;
       text-align: center;
-
-
-      &::before {
-        margin-right: 40px;
-      }
-
-      &::after {
-        margin-left: 40px;
-      }
     }
     p {
       font-family: $font_body;
