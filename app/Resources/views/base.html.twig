@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="{{ asset('/vendors/lightbox/css/lightbox.min.css') }}">
     {% endblock %}
 
+
+
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
 </head>
 <body>
@@ -33,22 +35,21 @@
                         {% set currentRoute = app.request.attributes.get('_route') %}
                         {% for name, route in navigation %}
                             {% set path = (route ? path(route) : '') %}
-                            <li class="hidden-xs" {% if route == currentRoute %}class="""active"{% endif %}><a href="{{ path }}">{{ name }}</a></li>
+                            <li class="hidden-xs" {% if route == currentRoute %}class="active"{% endif %}><a href="{{ path }}">{{ name }}</a></li>
                         {% endfor %}
 
                         <li class="hidden-sm hidden-lg hidden-md dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">Action</a></li>
-                                <li><a href="#">Another action</a></li>
-                                <li><a href="#">Something else here</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">Separated link</a></li>
-                                <li role="separator" class="divider"></li>
-                                <li><a href="#">One more separated link</a></li>
+                            <button class="btn btn-red dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <span class="caret"></span>
+                            </button>
+
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                                {% for name, route in navigation %}
+                                    {% set path = (route ? path(route) : '') %}
+                                    <li {% if route == currentRoute %}class="active"{% endif %}><a href="{{ path }}">{{ name }}</a></li>
+                                {% endfor %}
                             </ul>
                         </li>
-
                         <li>
                             <span>
                                 <a href="">S'INSCRIRE</a>
@@ -63,6 +64,7 @@
 {% endblock %}
 {% block javascripts %}
     <script src="{{ asset('/vendors/lightbox/js/lightbox-plus-jquery.min.js') }}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <script src="{{ asset('/js/scripts.js') }}"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
