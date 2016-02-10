@@ -9,3 +9,4 @@ services:
 
     utils.twitter.tweets_catcher:
         class: FrontBundle\Utils\Twitter\TwitterTweetsCatcher
+

@@ -1,14 +1,16 @@
-.item {
-  .carousel-page {
-    width: 100%;
-    height: 600px;
-    background-color: #5f666d;
-    color: white;
-    img {
+#main_carousel {
+  .item {
+    .carousel-page {
       width: 100%;
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
+      height: 600px;
+      background-color: #5f666d;
+      color: white;
+      img {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
   .carousel-caption {

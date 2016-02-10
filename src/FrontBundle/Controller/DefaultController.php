@@ -71,7 +71,7 @@ class DefaultController extends AbstractFrontController
         $twitterTweetsCatcher = $this->container->get('utils.twitter.tweets_catcher');
         $results = $twitterTweetsCatcher->getTweets();
 
-        return $this->render('@Front/Default/render/getTweets.html.twig', [
+        return $this->render('@Front/Default/render/get_tweets.html.twig', [
             'tweets' => $results,
         ]);
     }

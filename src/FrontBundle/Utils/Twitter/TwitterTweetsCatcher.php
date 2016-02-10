@@ -43,6 +43,7 @@ class TwitterTweetsCatcher
     public function getTweets()
     {
         $toa = new TwitterOAuth($this->consumerKey, $this->consumerSecret, $this->accessToken, $this->accessTokenSecret);
+        $toa->setTimeouts(10, 15);
         $hashtag = '#4LTrophy';
 
         $query = [
