@@ -40,6 +40,13 @@ class DefaultController extends AbstractFrontController
     /**
      * @return \Symfony\Component\HttpFoundation\Response
      */
+    public function enfantsdudesertAction() {
+        return $this->render('FrontBundle:Default:enfantsdudesert.html.twig');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function tripAction()
     {
         $facebookCatcher = $this->container->get('utils.facebook.feed_catcher');

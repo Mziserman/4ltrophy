@@ -2,7 +2,7 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
 var del = require('delete');
-var imagemin = require('gulp-imagemin');
+var image = require('gulp-image');
 
 gulp.task('sass', function () {
     gulp.src('./src/FrontBundle/Resources/Public/sass/master.scss')
@@ -39,7 +39,7 @@ gulp.task('clean_js', function() {
 
 gulp.task('img', function() {
     return gulp.src('./src/FrontBundle/Resources/Public/images/*')
-        .pipe(imagemin({ progressive: true }))
+        .pipe(image())
         .pipe(gulp.dest('./web/img'));
 });
 
