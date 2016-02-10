@@ -46,10 +46,15 @@
     </div>
 
     <div class="row">
-        <div class="video center-block">
-            <img src="{{ asset('img/slide1.jpg') }}" alt="">
+        <div class="video col-sm-10 col-sm-offset-1">
+            <div align="center" class="embed-responsive embed-responsive-16by9">
+                <video controls poster="{{ asset('img/presentation4l.jpg') }}" class="embed-responsive-item">
+                    <source src={{ asset('videos/presentationenfantsdudesert.mp4') }} type=video/mp4>
+                </video>
+            </div>
         </div>
-        </div>
+    </div>
+
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1">
             <h2>histoire</h2>
