@@ -43,6 +43,11 @@ gulp.task('img', function() {
         .pipe(gulp.dest('./web/img'));
 });
 
+gulp.task('video', function() {
+    return gulp.src('./src/FrontBundle/Resources/Public/videos/*')
+        .pipe(gulp.dest('./web/videos'));
+});
+
 gulp.task('vendors', function() {
     return gulp.src('./src/FrontBundle/Resources/Public/vendors/**')
         .pipe(gulp.dest('./web/vendors'));
