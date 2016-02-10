@@ -38,8 +38,12 @@
         font-size: 16px;
         text-decoration: none;
         margin-right: 15px;
+        background-color: #fff;
         color: $main_red;
       }
+    }
+    .dropdown {
+      margin-right: 55px;
     }
   }
 }
