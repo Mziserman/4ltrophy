@@ -10,7 +10,7 @@
                 <h2>LE 4L TROPHY</h2>
                 <p>Le Raid 4L Trophy est un raid automobile humanitaire destiné aux étudiants créé par Jean-Jacques Rey. Il est organisé par l'entreprise Desertours en partenariat avec l’école supérieur de commerce de Rennes.
                     Le Raid 4L Trophy a lieu chaque année. Les participants, âgés de 18 à 28 ans, disputent cette course d'orientation, réalisée exclusivement en Renault 4. Le parcours traversant la France, l’Espagne et le Maroc, et contient certaines étapes autour des dunes de Merzouga et dans l'Atlas.</p>
-                    <span><a href="{{ path('front_presentation') }}">En savoir plus</a></span>
+                    <span class="button"><a href="{{ path('front_presentation') }}">En savoir plus</a></span>
             </div>
         </div>
         <div class="row adventure">
@@ -22,7 +22,7 @@
                 <div class="text col-sm-6">
                     <h3>Suivez l'aventure de ces deux étudiantes en photo, vidéos, ...</h3>
                     <p>Durant les 14 jours d’aventure, deux étudiantes inscrites à l’aventure du 4L Trophy 2016 vont nous partager leur expérience. A travers un RoadBook de leurs itinéraires, vous pourrez découvrir des moments marquants de leurs journées à travers des photographies et des vidéos. Des images à vous couper le souffle, et de quoi vous donnez un aperçu de l’aventure sur le terrain. </p>
-                    <span><a href="{{ path('front_trip') }}">En savoir plus</a></span>
+                    <span class="button"><a href="{{ path('front_trip') }}">En savoir plus</a></span>
                 </div>
             </div>
         </div>
@@ -88,14 +88,15 @@
                         </div>
                     </div>
                 </div>
-                <span><a href="{{ path('front_testimony') }}">En savoir plus</a></span>
+                <span class="button"><a href="{{ path('front_testimony') }}">En savoir plus</a></span>
             </div>
 
         </div>
         <div class="row twitter">
-            <div class="container col-sm-10 col-sm-offset-1">
-                <p>le #4LTrophy, une experience de dingue, merci à tous pour votre soutient</p>
-            </div>
+            {{ render(controller('FrontBundle:Default:getTwitterTweets')) }}
+            <span class="button">
+                <a href="https://twitter.com/hashtag/4LTrophy" target="_blank">Suivez l'actualité du 4l trophy</a>
+            </span>
         </div>
         <div class="row stats">
             <div class="container hidden-sm hidden-xs col-md-10 col-md-offset-1">

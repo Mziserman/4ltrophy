@@ -1,5 +1,5 @@
 .home {
-  span {
+  span.button {
     padding:15px 30px 15px 30px;
     background-color: #d13d3d;
     text-transform: uppercase;
@@ -158,6 +158,60 @@
   .twitter {
     text-align: center;
     background-color: #f6f6f6;
+    background-image : url("../img/twitter.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+    line-height: 300px;
+
+    position: relative;
+
+    .button {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      right: 50%;
+      width: 220px;
+      margin-left: -110px;
+      line-height: normal;
+    }
+
+    .container {
+      text-align: center;
+      color: #070707;
+      font-size: 16px;
+      vertical-align: middle;
+      display: inline-block;
+      width: 100%;
+
+      #twitter-carousel {
+        text-align: center;
+
+        .carousel-control {
+          background-image: none;
+        }
+
+        .carousel-page {
+          width: 50%;
+          line-height:normal;
+          margin: auto;
+        }
+
+        .hashtag {
+          color: #3B94D9;
+          font-weight: bold;
+
+          &.trophy {
+            color: $main_red;
+          }
+        }
+
+        .arobas {
+          color: #3B94D9;
+          font-weight: bold;
+        }
+      }
+    }
   }
   .stats {
     text-align: center;
