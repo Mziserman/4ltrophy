@@ -8,7 +8,7 @@
     font-family: 'Open Sans', sans-serif;
     font-weight: bold;
   }
-  .bigPicture, .video {
+  .bigPicture {
     height: 400px;
     overflow: hidden;
     position: relative;
@@ -21,6 +21,7 @@
     }
   }
   .textAndPhotos {
+    padding:20px 0;
     h2 {
       margin:40px;
       text-align: center;
@@ -37,6 +38,7 @@
     }
   }
   .inter {
+    padding:20px 0;
     h2 {
       margin:20px 0 20px 0;
       text-align: center;
