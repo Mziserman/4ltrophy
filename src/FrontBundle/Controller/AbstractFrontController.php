@@ -22,7 +22,8 @@ abstract class AbstractFrontController extends Controller
     {
         $this->navigation = [
             "Accueil" => 'front_homepage',
-            "Présentation" => 'front_presentation',
+            "Le 4l trophy" => 'front_presentation',
+            "Enfants du desert" => 'front_enfantsdudesert',
             "Pauline & Margaux" => 'front_trip',
             "Préparation" => 'front_preparation',
             "Témoignages" => 'front_testimony',
