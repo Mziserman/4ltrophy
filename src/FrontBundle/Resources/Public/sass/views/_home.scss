@@ -10,16 +10,15 @@
   }
   .brand  {
     padding-bottom: 50px;
+    padding-top: 20px;
     text-align: center;
-
-
     overflow: hidden;
     .background_4l {
       position: absolute;
       width: 502px;
       height: 217px;
       left: -100px;
-      bottom:-100px;
+      bottom:-120px;
       background-repeat:no-repeat;
       background-size: 502px 217px;
     }
@@ -35,8 +34,9 @@
   }
 
   .adventure {
-    background: #f6f6f6;
     padding-bottom: 50px;
+    padding-top: 20px;
+    background: #f6f6f6;
     h2 {
       font-family: $font_title;
       text-align: center;
@@ -68,21 +68,27 @@
   }
   .testimony {
     padding-bottom: 50px;
+    padding-top: 20px;
     text-align: center;
-    .content {
-      padding:20px;
-      p, h3 {
-        color: #fff;
-      }
-      h2, h3 {
-        font-family: $font_title;
-      }
+    .container {
       p {
-        font-family: $font_body;
+        margin-bottom: 25px;
       }
-    }
-    img {
-      z-index:1;
+      .content {
+        padding:20px;
+        p, h3 {
+          color: #fff;
+        }
+        h2, h3 {
+          font-family: $font_title;
+        }
+        p {
+          font-family: $font_body;
+        }
+      }
+      img {
+        z-index:1;
+      }
     }
 
     .filter {
